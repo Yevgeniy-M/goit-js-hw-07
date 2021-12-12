@@ -1,14 +1,15 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-import * as basicLightbox from 'basiclightbox';
+import * as basicLightbox from './basiclightbox';
 
-const basicLightbox = require('basiclightbox');
+// const basicLightbox = require('basiclightbox');
 
 
 const imagesMarkup = createimagesMarkup(galleryItems);
 const gallery = document.querySelector('.gallery');
 const imageLink = document.addEventListener('click', onImageLink);
+
 const instance = basicLightbox.create(`
      <img src="assets/images/image.png" width="800" height="600">
  `) 
