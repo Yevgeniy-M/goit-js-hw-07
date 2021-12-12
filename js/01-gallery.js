@@ -1,11 +1,18 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
+import * as basicLightbox from 'basiclightbox';
+
+const basicLightbox = require('basiclightbox');
+
 
 const imagesMarkup = createimagesMarkup(galleryItems);
 const gallery = document.querySelector('.gallery');
-const imageLink = document.addEventListener('click', onImageLink)
-
+const imageLink = document.addEventListener('click', onImageLink);
+const instance = basicLightbox.create(`
+     <img src="assets/images/image.png" width="800" height="600">
+ `) 
+ instance.show();
 
 
 gallery.insertAdjacentHTML('beforeend', imagesMarkup);
@@ -29,9 +36,6 @@ function createimagesMarkup(images) {
     .join('');            
   }
 
-
-
-
 function onImageLink(event) {
   event.preventDefault();
   if (event.target.nodeName !== "A") {
@@ -40,10 +44,3 @@ function onImageLink(event) {
    basicLightbox.create(instance).show()
   )  
  };
-
-
-
-
-
-
-
